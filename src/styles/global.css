@@ -1581,3 +1581,102 @@ h3 {
     animation: none;
   }
 }
+
+/* Product preview: a realistic stand-in until the live product screenshot is ready. */
+.product-grid--featured {
+  grid-template-columns: 1fr;
+}
+
+.product-card {
+  overflow: hidden;
+  padding: clamp(0.7rem, 2vw, 1.25rem);
+  border-color: rgba(36, 88, 168, 0.22);
+  background: linear-gradient(135deg, #f9fbff 0%, #ffffff 46%, #f3f8f5 100%);
+}
+
+.product-mockup {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(48, 68, 91, 0.22);
+  border-radius: calc(var(--radius) - 4px);
+  background: #f5f8fc;
+  box-shadow: 0 18px 40px rgba(22, 46, 73, 0.16);
+}
+
+.mockup-topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 2.7rem;
+  padding: 0 1rem;
+  border-bottom: 1px solid #dce4ec;
+  background: #ffffff;
+  color: #8290a0;
+  font-size: 0.67rem;
+  font-weight: 700;
+}
+
+.mockup-dots { display: flex; gap: 0.3rem; }
+.mockup-dots span { width: 0.42rem; height: 0.42rem; border-radius: 50%; background: #e3a74a; }
+.mockup-dots span:nth-child(2) { background: #8fb9a3; }
+.mockup-dots span:nth-child(3) { background: #b8c4d1; }
+.mockup-address { padding: 0.35rem 1rem; border-radius: 999px; background: #f2f5f8; }
+.mockup-sync { margin-left: auto; color: #3e8c69; }
+.mockup-sync::before { content: ''; display: inline-block; width: 0.4rem; height: 0.4rem; margin-right: 0.35rem; border-radius: 50%; background: currentColor; }
+
+.mockup-body { display: grid; grid-template-columns: 10.5rem 1fr; min-height: 310px; }
+.mockup-sidebar { display: flex; flex-direction: column; gap: 0.3rem; padding: 1.2rem 0.75rem; background: #172f45; color: #aabac8; }
+.mockup-brand { display: flex; align-items: center; gap: 0.45rem; margin: 0 0 1.15rem 0.35rem; color: #fff; font-size: 0.85rem; letter-spacing: 0.03em; }
+.mockup-brand span { display: grid; width: 1.5rem; height: 1.5rem; place-items: center; border-radius: 0.45rem; background: #e3a74a; color: #172f45; font-size: 0.78rem; font-weight: 900; }
+.mockup-nav { display: flex; align-items: center; gap: 0.55rem; padding: 0.65rem 0.7rem; border-radius: 0.45rem; font-size: 0.68rem; font-weight: 700; }
+.mockup-nav i { width: 0.9rem; color: #7f9bb0; font-style: normal; text-align: center; }
+.mockup-nav--active { background: #31556c; color: #fff; }
+.mockup-nav--active i { color: #f2c36c; }
+.mockup-sidebar-footer { display: flex; align-items: center; gap: 0.45rem; margin-top: auto; padding: 0.7rem 0.35rem 0; border-top: 1px solid rgba(255,255,255,0.12); font-size: 0.62rem; }
+.mockup-avatar { display: grid; width: 1.45rem; height: 1.45rem; place-items: center; border-radius: 50%; background: #c5dcca; color: #24583e; font-size: 0.5rem; font-weight: 800; }
+
+.mockup-content { padding: clamp(1rem, 2.2vw, 1.7rem); color: #203447; }
+.mockup-heading-row, .mockup-panel-title { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; }
+.mockup-kicker { color: #8290a0; font-size: 0.62rem; font-weight: 700; }
+.mockup-heading-row h4 { margin: 0.25rem 0 1.15rem; font-family: 'Gordita', sans-serif; font-size: clamp(0.9rem, 1.8vw, 1.25rem); letter-spacing: -0.04em; }
+.mockup-add { padding: 0.55rem 0.75rem; border: 0; border-radius: 0.4rem; background: #2458a8; color: white; font-size: 0.62rem; font-weight: 800; }
+.mockup-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; }
+.mockup-metrics > div { padding: 0.75rem; border: 1px solid #e1e8ef; border-radius: 0.45rem; background: #fff; }
+.mockup-metrics span, .mockup-metrics small { display: block; color: #8190a0; font-size: 0.57rem; font-weight: 700; }
+.mockup-metrics strong { display: block; margin: 0.35rem 0 0.18rem; color: #203447; font-family: 'Gordita', sans-serif; font-size: clamp(0.95rem, 2vw, 1.3rem); letter-spacing: -0.05em; }
+.mockup-metrics small { color: #3e8c69; font-size: 0.52rem; }
+.mockup-metrics em { color: #9aa7b3; font-size: 0.58em; font-style: normal; }
+.mockup-metrics .mockup-warn { color: #c37a2b; }
+.mockup-panels { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 0.65rem; margin-top: 0.65rem; }
+.mockup-panel { min-height: 125px; padding: 0.8rem; border: 1px solid #e1e8ef; border-radius: 0.45rem; background: #fff; }
+.mockup-panel-title { margin-bottom: 0.55rem; font-size: 0.63rem; }
+.mockup-panel-title span { color: #71869a; font-size: 0.53rem; }
+.mockup-patient { display: grid; grid-template-columns: 1.2rem 1fr auto; align-items: center; gap: 0.4rem; padding: 0.4rem 0; border-top: 1px solid #eef2f5; }
+.mockup-patient b { color: #9aa7b3; font-size: 0.55rem; }
+.mockup-patient strong, .mockup-patient small { display: block; font-size: 0.55rem; }
+.mockup-patient small { margin-top: 0.14rem; color: #8b99a7; font-size: 0.48rem; }
+.mockup-patient em { padding: 0.2rem 0.3rem; border-radius: 999px; background: #fff2df; color: #b56f25; font-size: 0.43rem; font-style: normal; font-weight: 800; }
+.mockup-patient em.is-green { background: #e5f3ea; color: #37815d; }
+.mockup-chart { position: relative; height: 83px; margin-top: 0.35rem; overflow: hidden; background: repeating-linear-gradient(to bottom, transparent 0, transparent 20px, #edf2f5 21px); }
+.chart-line { position: absolute; inset: 20px 0 0; height: 58px; background: linear-gradient(145deg, transparent 0 11%, #6d9dc2 12% 13%, transparent 14% 26%, #6d9dc2 27% 28%, transparent 29% 45%, #6d9dc2 46% 47%, transparent 48% 62%, #6d9dc2 63% 64%, transparent 65% 77%, #6d9dc2 78% 79%, transparent 80%); clip-path: polygon(0 66%, 15% 54%, 30% 74%, 45% 35%, 60% 54%, 75% 18%, 100% 38%, 100% 100%, 0 100%); opacity: 0.9; }
+.mockup-chart i { position: absolute; bottom: 27%; width: 0.36rem; height: 0.36rem; border: 2px solid #4d87b2; border-radius: 50%; background: #fff; }
+.mockup-chart i:nth-of-type(1) { left: 14%; }.mockup-chart i:nth-of-type(2) { left: 29%; bottom: 18%; }.mockup-chart i:nth-of-type(3) { left: 44%; bottom: 57%; }.mockup-chart i:nth-of-type(4) { left: 59%; bottom: 38%; }.mockup-chart i:nth-of-type(5) { left: 74%; bottom: 74%; }.mockup-chart i:nth-of-type(6) { left: 88%; bottom: 54%; }
+.mockup-chart-labels { display: flex; justify-content: space-between; color: #9aa7b3; font-size: 0.45rem; }
+
+.product-copy { display: grid; grid-template-columns: 0.8fr 1.5fr 1.1fr; align-items: center; gap: 1.25rem; padding: 1.25rem 0.5rem 0.25rem; }
+.product-copy > * { margin-bottom: 0; }
+.product-copy h3 { font-size: clamp(1.3rem, 2.3vw, 1.8rem); }
+.product-copy > p:not(.product-tagline):not(.product-details) { color: var(--muted); line-height: 1.6; }
+.product-copy .product-tagline { grid-column: 1 / -1; margin-bottom: -0.7rem; }
+.product-copy .product-details { border: 0; padding: 0; font-size: 0.9rem; }
+.product-copy .module-list { grid-column: 1 / -1; margin: 0; }
+.product-copy .button { justify-self: start; }
+
+@media (max-width: 768px) {
+  .mockup-body { grid-template-columns: 1fr; }
+  .mockup-sidebar { display: none; }
+  .mockup-panels, .product-copy { grid-template-columns: 1fr; }
+  .product-copy { gap: 0.8rem; padding: 1.1rem 0.25rem 0.25rem; }
+  .product-copy .product-tagline { margin-bottom: -0.4rem; }
+  .product-copy .button { width: 100%; justify-content: center; }
+}

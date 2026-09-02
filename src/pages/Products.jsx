@@ -11,7 +11,7 @@ export default function Products() {
             <div>
               <SectionHeading
                 eyebrow="Products"
-                title="We build software that works where the internet does not."
+                title="Software that keeps your hospital moving."
                 description="Praavi Group builds simple, offline-first software for the businesses that every other tech company forgets: small hospitals, local shops, schools, farms, and everyday operations across Bharat. Kravient HMS is our first live product; it is the proof of a platform we are building out across dozens of industries, one product at a time. Whether it is a Kravient product you can start using today or a custom solution built around exactly what your business needs, everything we build follows one rule: if it is not simple enough to learn in a day, it is not ready to ship."
               />
             </div>
@@ -25,7 +25,7 @@ export default function Products() {
 
       <section className="section-frame">
         <div className="container">
-          <div className="product-grid">
+          <div className="product-grid product-grid--featured">
             {products.map((product) => (
               <ProductCard
                 key={product.title}
