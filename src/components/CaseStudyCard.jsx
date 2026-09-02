@@ -12,9 +12,7 @@ export default function CaseStudyCard({ title, description, info, reverse = fals
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <button className="button button-secondary" type="button">
-          Read Case Study
-        </button>
+        <span className="case-study-status">Full case study coming soon</span>
       </div>
     </article>
   );

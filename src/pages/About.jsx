@@ -28,15 +28,14 @@ export default function About() {
           <SectionHeading
             eyebrow="About Us"
             title="Built for the businesses that need software done right, not done fast and forgotten."
-            description="Praavi Group started as Praavi Consultants four years ago, building software for businesses that needed it done right, not done fast and forgotten. Kravient is the first product, built on the same discipline."
+            description="Praavi Group started as Praavi Consultants four years ago, building software for businesses that needed it done right, not done fast and forgotten. Kravient is our first product: the same discipline applied to a product businesses can pick up off the shelf."
           />
           <div className="about-overview">
             <PlaceholderBox label="Company Image" className="about-media" />
             <div className="card about-copy">
               <h3>Company Overview</h3>
               <p>
-                Kravient is our first product. It carries the same discipline we have applied to client work for four years,
-                now built into something businesses can pick up off the shelf.
+                Praavi Group started as Praavi Consultants four years ago, building software for businesses that needed it done right, not done fast and forgotten. Kravient is our first product, carrying that same discipline into something businesses can pick up off the shelf.
               </p>
               <p>
                 We are bootstrapped, deliberately. No outside investors, no shortcuts, just software that works and a business built to last.
@@ -63,7 +62,7 @@ export default function About() {
 
       <section className="section-frame">
         <div className="container">
-          <SectionHeading title="Core Values" description="The four values from the draft, now written out fully." />
+          <SectionHeading title="Core values" description="The principles behind how we build, ship, and support software." />
           <div className="value-grid">
             {values.map((value) => (
               <article key={value.title} className="card simple-card">
@@ -80,12 +79,12 @@ export default function About() {
         <div className="container">
           <SectionHeading
             title="Team"
-            description="The draft says this section still needs names, roles, and photos. I have left it as a clear placeholder instead of inventing staff."
+            description="The people behind Praavi will be introduced here as the team details are ready to share."
           />
           <article className="card team-card">
             <PlaceholderBox label="Team details pending" className="portrait-box" />
-            <h3>Need from Malhar</h3>
-            <p>Names, roles, and photos for the public team page.</p>
+            <h3>A team built around the work</h3>
+            <p>Team profiles, roles, and portraits will be added here as the public team page is finalized.</p>
           </article>
         </div>
       </section>

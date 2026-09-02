@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading';
 import PlaceholderBox from '../components/PlaceholderBox';
 import VideoPlaceholder from '../components/VideoPlaceholder';
+import { roadmap } from '../data/products';
 
 const benefits = [
   {
@@ -18,7 +19,7 @@ const benefits = [
   },
   {
     title: 'Built in India, for India',
-    text: 'Data hosted in India and built to match how Indian businesses actually operate.',
+    text: 'Data hosted in India (AWS Mumbai), built to meet how Indian businesses and Indian regulations actually work.',
   },
 ];
 
@@ -35,7 +36,7 @@ export default function WhyKravient() {
           <SectionHeading
             eyebrow="Why Kravient"
             title="One platform. Every Bharat business. Built to work without the internet."
-            description="Kravient is building the software layer for businesses India's tech industry has always overlooked: small hospitals, local shops, schools, farms, clinics, and service businesses across every corner of the country."
+            description="Kravient is building the software layer for businesses India's tech industry has always overlooked: small hospitals, local shops, schools, farms, clinics, and service businesses across every corner of the country. Kravient HMS, our hospital management system, is live today. It is the first proof of a much larger platform built for every industry that runs Bharat's economy."
           />
           <div className="why-grid">
             <div className="card intro-card">
@@ -65,7 +66,7 @@ export default function WhyKravient() {
         <div className="container">
           <SectionHeading
             title="Benefits"
-            description="The four pillars from the draft, kept in the same card layout."
+            description="Offline-first is not a feature added to one product. It is the foundation everything at Kravient is built on."
           />
           <div className="benefit-grid">
             {benefits.map((benefit) => (
@@ -82,15 +83,45 @@ export default function WhyKravient() {
       <section className="section-frame">
         <div className="container">
           <SectionHeading
-            title="Product strip"
-            description="A compact summary of the live product and the platform direction."
+            title="The first product is live"
+            description="More Kravient products are on the way, each built around the same practical foundation."
           />
           <div className="compact-product-grid">
-            {compactProducts.map((title) => (
-              <div key={title} className="card compact-product">
-                <PlaceholderBox label="Product Logo" className="compact-logo" />
-                <span>{title}</span>
+            {compactProducts.map((title, index) => (
+              <div key={title} className={`card compact-product ${index === 0 ? 'compact-product--live' : 'compact-product--roadmap'}`}>
+                <span className="product-status">{index === 0 ? 'Live today' : 'Platform direction'}</span>
+                <PlaceholderBox label={index === 0 ? 'Kravient HMS' : 'Kravient platform'} className="compact-logo" />
+                <strong>{index === 0 ? 'Kravient HMS' : 'More products are on the way'}</strong>
+                <span>{index === 0 ? 'Hospital management, offline-first, ₹7,000/year.' : title}</span>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-frame">
+        <div className="container">
+          <SectionHeading
+            eyebrow="Platform roadmap"
+            title="A platform for every part of Bharat's economy."
+            description="The roadmap spans 50 products across industries, starting with the live HMS platform. Planned products are shown clearly as planned; Kravient HMS is live today."
+          />
+          <div className="roadmap-grid">
+            {roadmap.map((group) => (
+              <article key={group.category} className="card roadmap-card">
+                <div className="roadmap-card-heading">
+                  <h3>{group.category}</h3>
+                  <span>Planned</span>
+                </div>
+                <div className="roadmap-products">
+                  {group.products.map((product) => (
+                    <span key={product} className={product === 'Kravient HMS' ? 'is-live' : ''}>
+                      {product}
+                      {product === 'Kravient HMS' ? <small>Live</small> : null}
+                    </span>
+                  ))}
+                </div>
+              </article>
             ))}
           </div>
         </div>

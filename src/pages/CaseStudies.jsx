@@ -10,7 +10,7 @@ export default function CaseStudies() {
           <SectionHeading
             eyebrow="Case Studies"
             title="Real problems. Real solutions. Four years of proof."
-            description="Before Kravient, there was Praavi. Four years of building software for real businesses with real deadlines. The draft does not include final project details yet, so this page is set up as a fill-in template."
+            description="Before Kravient, there was Praavi. Four years of building software for real businesses with real deadlines. We are assembling the project stories and outcomes that can be shared publicly."
           />
           <div className="case-studies-stack">
             {caseStudies.map((caseStudy, index) => (

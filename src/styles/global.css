@@ -82,6 +82,10 @@ img {
   margin: 0 auto;
 }
 
+.container--wide {
+  width: min(100% - 2rem, 1600px);
+}
+
 .app-shell {
   min-height: 100vh;
   display: flex;
@@ -313,7 +317,10 @@ h1 {
 
 .hero-title-part--white {
   color: #ffffff;
-  text-shadow: 0 1px 2px rgba(25, 23, 21, 0.18);
+  -webkit-text-stroke: 1px rgba(25, 23, 21, 0.08);
+  text-shadow:
+    0 2px 6px rgba(25, 23, 21, 0.22),
+    0 0 1px rgba(25, 23, 21, 0.28);
 }
 
 .hero-title-part--green {
@@ -425,7 +432,7 @@ h3 {
 
 .hero-pill,
 .stat-card {
-  border-radius: 999px;
+  border-radius: var(--radius);
 }
 
 .hero-pill {
@@ -506,7 +513,7 @@ h3 {
 .value-grid,
 .team-grid,
 .compact-product-grid,
-.tech-grid {
+.tech-marquee {
   display: grid;
   gap: var(--space-4);
 }
@@ -542,6 +549,94 @@ h3 {
   gap: var(--space-4);
 }
 
+.section-frame--full-width {
+  overflow-x: clip;
+}
+
+.carousel-shell {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.carousel-heading {
+  display: block;
+}
+
+.carousel-heading-copy {
+  max-width: 760px;
+}
+
+.carousel-heading h2 {
+  margin-bottom: 0.2rem;
+}
+
+.carousel-description {
+  max-width: 760px;
+  margin-bottom: 0;
+}
+
+.carousel-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+  scroll-behavior: auto;
+  -ms-overflow-style: none;
+  border-radius: calc(var(--radius) + 4px);
+}
+
+.carousel-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  min-width: max-content;
+  padding: 0.2rem 0;
+}
+
+.carousel-card {
+  width: 280px;
+  min-width: 280px;
+  display: grid;
+  gap: 0.95rem;
+  background:
+    radial-gradient(circle at top right, rgba(36, 88, 168, 0.08), transparent 28%),
+    rgba(255, 255, 255, 0.88);
+}
+
+.carousel-card-visual {
+  min-height: 110px;
+  background:
+    linear-gradient(135deg, rgba(240, 236, 229, 0.95), rgba(228, 220, 209, 0.98));
+}
+
+.carousel-card-copy {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.carousel-card-kicker {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.carousel-card h3 {
+  margin-bottom: 0;
+}
+
+.carousel-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
 .split-section-heading {
   display: flex;
   align-items: end;
@@ -574,12 +669,51 @@ h3 {
     rgba(255, 255, 255, 0.88);
 }
 
-.tech-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+.tech-box {
+  min-height: 88px;
+  min-width: 180px;
+  flex: 0 0 180px;
 }
 
-.tech-box {
-  min-height: 96px;
+.tech-marquee {
+  display: grid;
+  gap: var(--space-4);
+  overflow: hidden;
+}
+
+.tech-row {
+  overflow: hidden;
+}
+
+.tech-track {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  width: max-content;
+  min-width: max-content;
+  will-change: transform;
+  animation: tech-scroll-left 14s linear infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.tech-group {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  flex: 0 0 auto;
+}
+
+.tech-track--left {
+  animation-name: tech-scroll-left;
+}
+
+.tech-track--right {
+  animation-name: tech-scroll-right;
+}
+
+.tech-row:hover .tech-track,
+.tech-row:focus-within .tech-track {
+  animation-play-state: paused;
 }
 
 .stat-box {
@@ -610,6 +744,59 @@ h3 {
 
 .product-card {
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-card .button {
+  margin-top: auto;
+}
+
+.product-media {
+  width: 100%;
+  min-height: 190px;
+  margin-bottom: var(--space-3);
+  background:
+    radial-gradient(circle at 75% 25%, rgba(255, 204, 77, 0.42), transparent 22%),
+    linear-gradient(135deg, rgba(36, 88, 168, 0.96), rgba(21, 52, 105, 0.98));
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.product-tagline {
+  margin-bottom: 0.35rem;
+  color: var(--accent) !important;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.product-details {
+  width: 100%;
+  padding: 0.85rem 0;
+  border-top: 1px solid rgba(199, 213, 231, 0.8);
+  border-bottom: 1px solid rgba(199, 213, 231, 0.8);
+  color: var(--text) !important;
+  font-weight: 700;
+}
+
+.module-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0 0 var(--space-4);
+}
+
+.module-list span,
+.roadmap-products span {
+  padding: 0.42rem 0.62rem;
+  border: 1px solid rgba(159, 180, 207, 0.65);
+  border-radius: 999px;
+  background: rgba(234, 241, 251, 0.72);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 .add-more-card {
@@ -636,9 +823,20 @@ h3 {
   gap: var(--space-3);
 }
 
+.methodology--wide {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
 .method-step {
   text-align: center;
   position: relative;
+}
+
+.method-step p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 .method-step:not(:last-child)::after {
@@ -721,6 +919,9 @@ h3 {
 }
 
 .compact-product {
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(234, 241, 251, 0.96));
 }
@@ -728,6 +929,75 @@ h3 {
 .compact-logo {
   min-height: 80px;
   margin-bottom: var(--space-2);
+}
+
+.product-status,
+.roadmap-card-heading span {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.compact-product > span:last-child {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.compact-product--live {
+  border-color: rgba(36, 88, 168, 0.38);
+}
+
+.compact-product--roadmap {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(247, 243, 236, 0.94));
+}
+
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.roadmap-card {
+  min-height: 170px;
+}
+
+.roadmap-card-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: var(--space-3);
+}
+
+.roadmap-card-heading h3 {
+  margin-bottom: 0;
+  font-size: 1.05rem;
+}
+
+.roadmap-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.roadmap-products span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.76rem;
+}
+
+.roadmap-products span.is-live {
+  border-color: rgba(36, 88, 168, 0.38);
+  background: rgba(219, 232, 251, 0.95);
+  color: var(--accent);
+}
+
+.roadmap-products small {
+  font-size: 0.65rem;
+  text-transform: uppercase;
 }
 
 .case-studies-stack {
@@ -776,6 +1046,14 @@ h3 {
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.case-study-status {
+  display: inline-flex;
+  margin-top: var(--space-3);
+  color: var(--accent);
+  font-size: 0.84rem;
+  font-weight: 800;
 }
 
 .info-list,
@@ -1115,12 +1393,16 @@ h3 {
   }
 
   .feature-grid,
-  .tech-grid,
   .product-grid,
   .value-grid,
   .team-grid,
   .compact-product-grid,
-  .methodology {
+  .methodology,
+  .roadmap-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .methodology--wide {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1137,6 +1419,10 @@ h3 {
   .split-section-heading-right {
     text-align: left;
     margin-right: 0;
+  }
+
+  .carousel-description {
+    text-align: left;
   }
 
   .method-step:not(:last-child)::after {
@@ -1208,16 +1494,20 @@ h3 {
   }
 
   .feature-grid,
-  .tech-grid,
   .product-grid,
   .value-grid,
   .team-grid,
   .compact-product-grid,
   .methodology,
+  .roadmap-grid,
   .split-grid,
   .custom-grid,
   .page-intro-grid {
     grid-template-columns: 1fr;
+  }
+
+  .container--wide {
+    width: min(100% - 2rem, var(--max-width));
   }
 
   .case-study {
@@ -1255,7 +1545,39 @@ h3 {
     align-items: flex-start;
   }
 
+  .carousel-card {
+    width: 250px;
+    min-width: 250px;
+  }
+
   .contact-submit {
     width: 100%;
+  }
+}
+
+@keyframes tech-scroll-left {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-33.333%, 0, 0);
+  }
+}
+
+@keyframes tech-scroll-right {
+  from {
+    transform: translate3d(-33.333%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-track--left,
+  .tech-track--right {
+    animation: none;
   }
 }

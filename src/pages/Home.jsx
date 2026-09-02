@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading';
 import PlaceholderBox from '../components/PlaceholderBox';
 import FeatureCard from '../components/FeatureCard';
-import TechnologyGrid from '../components/TechnologyGrid';
-import { technologies } from '../data/technologies';
+import AutoCarousel from '../components/AutoCarousel';
 
 const features = [
   {
@@ -25,6 +24,57 @@ const features = [
 ];
 
 const heroHighlights = ['4 Years of client work', '1 Live Product', 'Offline-first by design'];
+
+const carouselItems = [
+  {
+    label: 'Operations',
+    kicker: 'Live workflow',
+    title: 'Order Desk',
+    text: 'A simple queue for incoming requests, approvals, and daily handoffs.',
+  },
+  {
+    label: 'Finance',
+    kicker: 'Kravient HMS',
+    title: 'Billing Hub',
+    text: 'Billing, collections, and due-date reminders in one focused workflow.',
+  },
+  {
+    label: 'Inventory',
+    kicker: 'Kravient platform',
+    title: 'Stock Monitor',
+    text: 'Stock levels, reorder alerts, and movement history without operational clutter.',
+  },
+  {
+    label: 'Support',
+    kicker: 'Kravient platform',
+    title: 'Help Desk',
+    text: 'Tickets, status tags, and response tracking in a straightforward queue.',
+  },
+  {
+    label: 'People',
+    kicker: 'Kravient platform',
+    title: 'Team Board',
+    text: 'Employees, shifts, and simple access controls arranged for daily use.',
+  },
+  {
+    label: 'Analytics',
+    kicker: 'Kravient platform',
+    title: 'Insight Panel',
+    text: 'Charts, summaries, and performance signals in a calm overview.',
+  },
+  {
+    label: 'Docs',
+    kicker: 'Kravient platform',
+    title: 'File Vault',
+    text: 'Attachments, notes, and templates organized for quick retrieval.',
+  },
+  {
+    label: 'Mobile',
+    kicker: 'Responsive',
+    title: 'Field App',
+    text: 'A compact mobile-friendly module for on-the-go tasks and updates.',
+  },
+];
 
 export default function Home() {
   return (
@@ -111,11 +161,11 @@ export default function Home() {
 
       <section className="section-frame">
         <div className="container">
-          <SectionHeading
+          <AutoCarousel
             title="Built for the conditions our clients actually operate in"
             description="Poor internet, low-end devices, and non-technical users are not edge cases for us. They are the baseline."
+            items={carouselItems}
           />
-          <TechnologyGrid technologies={technologies} />
         </div>
       </section>
     </div>

@@ -9,16 +9,16 @@ export default function Contact() {
           <SectionHeading
             eyebrow="Contact"
             title="Have a question about Kravient, want a custom solution built, or just want to talk to someone who will actually pick up?"
-            description="Reach out. The draft still marks the real contact details as required inputs, so those fields remain clearly labelled placeholders."
+            description="Have a question about Kravient, want a custom solution built, or just want to talk to someone who will actually pick up? Reach out."
           />
           <div className="contact-grid">
             <div className="card contact-copy">
               <h3>Get in touch</h3>
               <p>Have a question about Kravient, want a custom solution built, or just want to talk to someone who will actually pick up? Reach out.</p>
               <ul className="contact-list">
-                <li>Email: [PROVIDE - e.g. hello@kravient.com]</li>
-                <li>Phone: [PROVIDE]</li>
-                <li>Office Address: [PROVIDE - Pune, confirm exact address]</li>
+                <li>Email: Contact details coming soon</li>
+                <li>Phone: Contact details coming soon</li>
+                <li>Office: Pune, address to be confirmed</li>
               </ul>
             </div>
             <form className="card contact-form" onSubmit={(event) => event.preventDefault()}>
@@ -79,7 +79,7 @@ export default function Contact() {
 
       <section className="section-frame">
         <div className="container">
-          <PlaceholderBox label="Embed Google Maps link here after address is confirmed" className="map-box" />
+          <PlaceholderBox label="Our office location will appear here" className="map-box" />
         </div>
       </section>
     </div>
